@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LimpIA Ica - Gestión Inteligente de Residuos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <div class="pulse-dot"></div>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">LimpIA Ica</span>
+                    <div class="brand-subtitle">Gestión Inteligente</div>
+                </div>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <button class="nav-link active" onclick="showPage('inicio')">Inicio</button>
+                <button class="nav-link" onclick="showPage('mapa')">Mapa</button>
+                <button class="nav-link" onclick="showPage('blog')">Blog</button>
+                <button class="nav-link" onclick="showPage('nosotros')">Nosotros</button>
+                <button class="nav-link" onclick="showPage('contacto')">Contacto</button>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Página de Inicio -->
+    <div id="inicio" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Tecnología para el Cambio Social</span>
+                </div>
+                
+                <h1 class="hero-title">LimpIA Ica</h1>
+                <p class="hero-description">
+                    La plataforma digital más avanzada para transformar la gestión de residuos sólidos urbanos en Ica. 
+                    <span class="highlight">Únete a la revolución verde</span> y ayuda a crear una ciudad más limpia y sostenible.
+                </p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showPage('mapa')">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Reportar Punto Crítico
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-secondary" onclick="showPage('mapa')">
+                        <i class="fas fa-recycle"></i>
+                        Explorar Reciclaje
+                    </button>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="stat-number" id="statToneladas">1247</div>
+                        <div class="stat-label">Toneladas Recicladas</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-number" id="statCiudadanos">3892</div>
+                        <div class="stat-label">Ciudadanos Activos</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="stat-number" id="statReportes">0</div>
+                        <div class="stat-label">Reportes Realizados</div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="stat-number" id="statPuntos">0</div>
+                        <div class="stat-label">Puntos de Acopio</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Descubre Nuestras Funcionalidades</h2>
+                    <p>Herramientas poderosas diseñadas para empoderar a la comunidad y crear un impacto real</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card" onclick="showPage('blog')">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Blog Educativo</h3>
+                            <div class="feature-subtitle">Contenido especializado</div>
+                            <p>Accede a contenido educativo de alta calidad sobre reciclaje, gestión de residuos y sostenibilidad ambiental.</p>
+                            <div class="feature-link">
+                                Explorar Contenido
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card" onclick="showPage('nosotros')">
+                        <div class="feature-icon cyan">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Nuestro Proyecto</h3>
+                            <div class="feature-subtitle">Misión y visión</div>
+                            <p>Descubre más sobre nuestra misión, visión y el equipo apasionado detrás de LimpIA Ica.</p>
+                            <div class="feature-link">
+                                Conocer Más
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <i class="fas fa-globe cta-icon"></i>
+                <h2>Únete al Cambio</h2>
+                <p>Cada acción cuenta. Cada reporte importa. Cada ciudadano puede hacer la diferencia. 
+                <span class="highlight">Juntos construimos una Ica más sostenible.</span></p>
+                
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="showPage('mapa')">
+                        <i class="fas fa-heart"></i>
+                        Comenzar Ahora
+                    </button>
+                    <button class="btn btn-outline" onclick="showPage('contacto')">
+                        Contáctanos
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Página de Mapa -->
+    <div id="mapa" class="page">
+        <div class="page-header">
+            <h1>Mapa Interactivo</h1>
+            <p>Explora, reporta y contribuye a una Ica más limpia</p>
+        </div>
+
+        <!-- Dashboard de Métricas -->
+        <div class="metrics-dashboard">
+            <div class="metric-card red">
+                <div class="metric-number" id="reportesActivos">0</div>
+                <div class="metric-label">Reportes Activos</div>
+            </div>
+            <div class="metric-card blue">
+                <div class="metric-number" id="puntosAcopio">0</div>
+                <div class="metric-label">Puntos de Acopio</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-number" id="reportesResueltos">0</div>
+                <div class="metric-label">% Resueltos</div>
+            </div>
+            <div class="metric-card purple">
+                <div class="metric-number">24h</div>
+                <div class="metric-label">Tiempo Promedio</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('ver-mapa')">Ver Mapa</button>
+                <button class="tab" onclick="showTab('reportar')">Reportar Problema</button>
+                <button class="tab" onclick="showTab('registrar')">Registrar Acopio</button>
+            </div>
+
+            <!-- Ver Mapa Tab -->
+            <div id="ver-mapa" class="tab-content active">
+                <div class="filters">
+                    <button class="filter-btn active">
+                        <i class="fas fa-filter"></i>
+                        Todos
+                    </button>
+                    <button class="filter-btn">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Reportes
+                    </button>
+                    <button class="filter-btn">
+                        <i class="fas fa-recycle"></i>
+                        Puntos de Acopio
+                    </button>
+                </div>
+
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Mapa Interactivo de Ica</h3>
+                        <p>Aquí se mostraría el mapa con marcadores dinámicos</p>
+                        <div class="map-legend">
+                            <div class="legend-item">
+                                <div class="legend-dot red"></div>
+                                <span>Reportes (<span id="reportesCount">0</span>)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot blue"></div>
+                                <span>Puntos de Acopio (<span id="acopiosCount">0</span>)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reportar Problema Tab -->
+            <div id="reportar" class="tab-content">
+                <div class="form-container">
+                    <div class="form-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Reportar Problema</h3>
+                        <p>Ayúdanos a identificar puntos críticos de acumulación de basura</p>
+                    </div>
+                    
+                    <form id="reportForm" class="form">
+                        <div class="form-group">
+                            <label>Título del Reporte *</label>
+                            <input type="text" id="reportTitulo" placeholder="Ej: Acumulación de basura en..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Descripción *</label>
+                            <textarea id="reportDescripcion" placeholder="Describe detalladamente el problema..." rows="4" required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nivel de Prioridad *</label>
+                                <select id="reportPrioridad" required>
+                                    <option value="">Selecciona la prioridad</option>
+                                    <option value="baja">Baja</option>
+                                    <option value="media">Media</option>
+                                    <option value="alta">Alta</option>
+                                    <option value="critica">Crítica</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Ubicación *</label>
+                                <div class="input-with-button">
+                                    <input type="text" id="reportUbicacion" placeholder="Dirección o referencia" required>
+                                    <button type="button" class="location-btn">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Imagen de Referencia</label>
+                            <div class="file-upload">
+                                <input type="file" id="reportImagen" accept="image/*">
+                                <div class="file-upload-content">
+                                    <i class="fas fa-upload"></i>
+                                    <p>Arrastra una imagen aquí o haz clic para seleccionar</p>
+                                    <small>PNG, JPG hasta 10MB</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary full-width">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Enviar Reporte
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Registrar Acopio Tab -->
+            <div id="registrar" class="tab-content">
+                <div class="form-container">
+                    <div class="form-header">
+                        <i class="fas fa-recycle"></i>
+                        <h3>Registrar Punto de Acopio</h3>
+                        <p>Registra un nuevo punto de recolección de materiales reciclables</p>
+                    </div>
+                    
+                    <form id="acopioForm" class="form">
+                        <div class="form-group">
+                            <label>Título *</label>
+                            <input type="text" id="acopioTitulo" placeholder="Nombre del punto de acopio" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <textarea id="acopioDescripcion" placeholder="Describe el punto de acopio..." rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Tipo de Residuos *</label>
+                                <input type="text" id="acopioTipoResiduos" placeholder="Ej: Papel, Plástico, Vidrio" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="text" id="acopioTelefono" placeholder="+51 xxx xxx xxx">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Ubicación *</label>
+                            <div class="input-with-button">
+                                <input type="text" id="acopioUbicacion" placeholder="Dirección completa" required>
+                                <button type="button" class="location-btn">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Horario de Atención</label>
+                            <input type="text" id="acopioHorario" placeholder="Ej: Lunes a Viernes 8:00 AM - 6:00 PM">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary full-width">
+                            <i class="fas fa-recycle"></i>
+                            Registrar Punto de Acopio
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página de Blog -->
+    <div id="blog" class="page">
+        <div class="page-header">
+            <h1>Blog y Comunidad</h1>
+            <p>Conocimiento, reportes y puntos de acopio en un solo lugar</p>
+        </div>
+
+        <!-- Blog Tabs -->
+        <div class="blog-tabs">
+            <button class="blog-tab active" onclick="showBlogTab('contenido')">Contenido Educativo</button>
+            <button class="blog-tab" onclick="showBlogTab('reportes')">Reportes (<span id="blogReportesCount">0</span>)</button>
+            <button class="blog-tab" onclick="showBlogTab('puntos')">Puntos de Acopio (<span id="blogPuntosCount">0</span>)</button>
+        </div>
+
+        <!-- Contenido Educativo -->
+        <div id="contenido" class="blog-content active">
+            <div class="search-filters">
+                <input type="text" placeholder="Buscar artículos..." class="search-input">
+                <select class="filter-select">
+                    <option value="">Todas las categorías</option>
+                    <option value="reciclaje">Reciclaje</option>
+                    <option value="educacion">Educación</option>
+                    <option value="sostenibilidad">Sostenibilidad</option>
+                </select>
+            </div>
+
+            <!-- Artículo destacado -->
+            <div class="featured-article">
+                <div class="featured-image">
+                    <img src="images/destacado-reciclaje.png" alt="Artículo destacado">
+                </div>
+                <div class="featured-content">
+                    <div class="featured-badge">⭐ Destacado</div>
+                    <h3>Guía Completa de Reciclaje en Casa</h3>
+                    <p>Aprende cómo implementar un sistema de reciclaje efectivo en tu hogar con esta guía paso a paso.</p>
+                    <div class="article-meta">
+                        <span>Equipo LimpIA • 10 Ene 2024</span>
+                        <button class="btn btn-primary">Leer Más</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de artículos -->
+            <div class="articles-grid">
+                <div class="article-card">
+                    <img src="images/reciclaje-en-casa.png" alt="Artículo">
+                    <div class="article-content">
+                        <div class="article-category">Reciclaje</div>
+                        <h3>Impacto Ambiental de los Residuos Sólidos</h3>
+                        <p>Conoce el impacto que tienen los residuos mal gestionados en nuestro ambiente...</p>
+                        <div class="article-meta">
+                            <span>Dr. María González</span>
+                            <span>8 Ene 2024</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Más artículos se generarán dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Reportes -->
+        <div id="reportes" class="blog-content">
+            <div class="search-filters">
+                <input type="text" placeholder="Buscar reportes..." class="search-input">
+                <select class="filter-select">
+                    <option value="">Todos los estados</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="en-proceso">En proceso</option>
+                    <option value="resuelto">Resuelto</option>
+                </select>
+            </div>
+            <div id="reportesList" class="reports-grid">
+                <!-- Los reportes se cargarán dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Puntos de Acopio -->
+        <div id="puntos" class="blog-content">
+            <div class="search-filters">
+                <input type="text" placeholder="Buscar puntos de acopio..." class="search-input">
+                <select class="filter-select">
+                    <option value="">Todos los tipos</option>
+                    <option value="papel">Papel</option>
+                    <option value="plastico">Plástico</option>
+                    <option value="vidrio">Vidrio</option>
+                    <option value="organicos">Orgánicos</option>
+                </select>
+            </div>
+            <div id="puntosList" class="points-grid">
+                <!-- Los puntos de acopio se cargarán dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Página de Nosotros -->
+    <div id="nosotros" class="page">
+        <div class="page-header">
+            <h1>Nosotros</h1>
+            <p>Conoce al equipo y la visión detrás de LimpIA Ica</p>
+        </div>
+
+        <!-- Misión y Visión -->
+        <div class="mission-vision">
+            <div class="mission-card">
+                <div class="card-icon emerald">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Nuestra Misión</h3>
+                <p>Una plataforma web desarrollada por estudiantes de Ingeniería de Sistemas para mejorar la gestión de residuos sólidos urbanos en Ica.</p>
+            </div>
+            
+            <div class="vision-card">
+                <div class="card-icon cyan">
+                    <i class="fas fa-sparkles"></i>
+                </div>
+                <h3>Nuestra Visión</h3>
+                <p>Ser la principal herramienta tecnológica de impacto social en Ica para empoderar a la comunidad y facilitar una gestión urbana más eficiente.</p>
+            </div>
+        </div>
+
+        <!-- Integrantes -->
+        <div class="team-section">
+            <h3>Integrantes</h3>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Perez Injante, Jhamir Antonio</h4>
+                    <div class="member-role">Desarrollador Frontend</div>
+                    <p>Estudiante de Ingeniería de Sistemas especializado en desarrollo de interfaces de usuario</p>
+                    <a href="mailto:jhamir.perez@unica.edu.pe">jhamir.perez@unica.edu.pe</a>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Alviar Carhuayo, Manuel Jesus</h4>
+                    <div class="member-role">Desarrollador Backend</div>
+                    <p>Estudiante de Ingeniería de Sistemas enfocado en desarrollo de APIs y bases de datos</p>
+                    <a href="mailto:manuel.alviar@unica.edu.pe">manuel.alviar@unica.edu.pe</a>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Curioso Hernandez, Jeremy Fabian</h4>
+                    <div class="member-role">Analista de Sistemas</div>
+                    <p>Estudiante de Ingeniería de Sistemas especializado en análisis y diseño de sistemas</p>
+                    <a href="mailto:jeremy.curioso@unica.edu.pe">jeremy.curioso@unica.edu.pe</a>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Navarrete Osis, Aldhair Alexis</h4>
+                    <div class="member-role">Diseñador UX/UI</div>
+                    <p>Estudiante de Ingeniería de Sistemas enfocado en experiencia de usuario y diseño</p>
+                    <a href="mailto:aldhair.navarrete@unica.edu.pe">aldhair.navarrete@unica.edu.pe</a>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4>Ore Huillca, Johan Sebastian</h4>
+                    <div class="member-role">Gestor de Proyecto</div>
+                    <p>Estudiante de Ingeniería de Sistemas especializado en gestión y coordinación de proyectos</p>
+                    <a href="mailto:johan.ore@unica.edu.pe">johan.ore@unica.edu.pe</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Docente -->
+        <div class="teacher-section">
+            <h3>Docente</h3>
+            <div class="teacher-card">
+                <div class="teacher-avatar">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h4>Ing. Erwin Peña Casas</h4>
+                <div class="teacher-role">Docente Asesor</div>
+                <p>Ingeniero de Sistemas con amplia experiencia en desarrollo de software y gestión de proyectos tecnológicos</p>
+                <a href="mailto:erwin.pena@unica.edu.pe">erwin.pena@unica.edu.pe</a>
+            </div>
+        </div>
+
+        <!-- Objetivos Estratégicos -->
+        <div class="objectives-section">
+            <h3>Objetivos Estratégicos</h3>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <div class="objective-number">1</div>
+                    <h4>Participación Ciudadana</h4>
+                    <p>Fomentar la participación activa de los ciudadanos en la gestión de residuos sólidos urbanos.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <div class="objective-number">2</div>
+                    <h4>Transparencia</h4>
+                    <p>Proporcionar transparencia en la gestión municipal de residuos y espacios públicos.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <div class="objective-number">3</div>
+                    <h4>Educación Ambiental</h4>
+                    <p>Educar a la comunidad sobre prácticas sostenibles y gestión responsable de residuos.</p>
+                </div>
+                
+                <div class="objective-card">
+                    <div class="objective-number">4</div>
+                    <h4>Tecnología Social</h4>
+                    <p>Utilizar la tecnología como herramienta de impacto social positivo en la comunidad.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Institución -->
+        <div class="institution-section">
+            <div class="institution-card">
+                <div class="institution-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Institución de Respaldo</h3>
+                <h4>Universidad Nacional San Luis Gonzaga de Ica</h4>
+                <p>Este proyecto es desarrollado por estudiantes de la Facultad de Ingeniería de Sistemas como parte de su compromiso con el desarrollo sostenible.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página de Contacto -->
+    <div id="contacto" class="page">
+        <div class="page-header">
+            <h1>Contacto</h1>
+            <p>Estamos aquí para ayudarte y escuchar tus ideas</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Formulario de Contacto -->
+            <div class="contact-form-section">
+                <div class="contact-form-card">
+                    <h3>Envíanos tu Consulta</h3>
+                    <p>Completa el formulario y nos pondremos en contacto contigo</p>
+                    
+                    <form id="contactForm" class="form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nombre *</label>
+                                <input type="text" id="contactNombre" placeholder="Tu nombre completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input type="email" id="contactEmail" placeholder="tu@email.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="text" id="contactTelefono" placeholder="+51 xxx xxx xxx">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Asunto *</label>
+                            <input type="text" id="contactAsunto" placeholder="Asunto de tu consulta" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Mensaje *</label>
+                            <textarea id="contactMensaje" placeholder="Describe tu consulta..." rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-checkboxes">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="contactTerminos" required>
+                                <span class="checkmark"></span>
+                                Acepto los términos y condiciones *
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="contactNewsletter">
+                                <span class="checkmark"></span>
+                                Suscribirme al newsletter
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary full-width">
+                            <i class="fas fa-envelope"></i>
+                            Enviar Consulta
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Panel Lateral -->
+            <div class="contact-sidebar">
+                <!-- Información de Contacto -->
+                <div class="contact-info-card">
+                    <h4>Información de Contacto</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contacto@limpiaica.pe">contacto@limpiaica.pe</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+51956123456">+51 956 123 456</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Universidad Nacional San Luis Gonzaga de Ica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="social-card">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h3>Preguntas Frecuentes</h3>
+            <div class="faq-search">
+                <input type="text" placeholder="Buscar en preguntas frecuentes..." class="search-input">
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        ¿Cómo puedo reportar un punto crítico de basura?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Puedes reportar un punto crítico navegando a la sección 'Mapa', seleccionando la pestaña 'Reportar Problema' y completando el formulario con la información requerida.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        ¿Es gratuito usar la plataforma?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Sí, LimpIA Ica es completamente gratuita para todos los ciudadanos de Ica. Nuestro objetivo es promover la participación ciudadana en la gestión de residuos.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        ¿Cómo puedo encontrar puntos de reciclaje cerca de mi ubicación?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        En la sección 'Mapa', puedes ver todos los puntos de acopio marcados en azul. También puedes usar los filtros para mostrar solo los puntos de reciclaje.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Final -->
+        <div class="final-cta">
+            <h3>¿Listo para hacer la diferencia?</h3>
+            <p>Únete a nuestra comunidad y ayuda a crear una Ica más limpia y sostenible</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="showPage('mapa')">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Reportar Problema
+                </button>
+                <button class="btn btn-outline" onclick="showPage('blog')">
+                    <i class="fas fa-book-open"></i>
+                    Explorar Blog
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <i class="fas fa-leaf"></i>
+                    <span>LimpIA Ica</span>
+                </div>
+                <p>Plataforma digital para mejorar la gestión de residuos sólidos urbanos en Ica.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><button onclick="showPage('inicio')">Inicio</button></li>
+                    <li><button onclick="showPage('mapa')">Mapa</button></li>
+                    <li><button onclick="showPage('blog')">Blog</button></li>
+                    <li><button onclick="showPage('nosotros')">Nosotros</button></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Servicios</h4>
+                <ul>
+                    <li>Reportes de Problemas</li>
+                    <li>Puntos de Acopio</li>
+                    <li>Contenido Educativo</li>
+                    <li>Voluntariados</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>contacto@limpiaica.pe</li>
+                    <li>+51 956 123 456</li>
+                    <li>Universidad Nacional San Luis Gonzaga de Ica</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 LimpIA Ica. Todos los derechos reservados. Desarrollado con ❤️ por estudiantes de Ingeniería de Sistemas - UNICA.</p>
+        </div>
+    </footer>
+
+    <!-- Modales -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Detalles del Reporte</h3>
+                <button class="modal-close" onclick="closeModal('reportModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notificationText">Operación exitosa</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
